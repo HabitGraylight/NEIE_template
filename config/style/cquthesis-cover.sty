@@ -1,0 +1,64 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cquthesis-cover}[2023/10/01 重庆大学封面模板]
+
+% 基础依赖
+\RequirePackage{graphicx} % 确保加载 graphicx 包
+\RequirePackage{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{xcolor}   % 确保加载 xcolor 包
+
+% 参数配置接口
+\newcommand{\setschoolbadge}[2][width=4cm]{
+  \def\cquschoolbadge{\includegraphics[#1]{#2}}
+}
+\newcommand{\setuniversity}[1]{\def\cquniversity{#1}}
+\newcommand{\setfaculty}[1]{\def\cqufaculty{#1}}
+
+% 默认配置
+\setschoolbadge{assets/images/CQU-logo.png} % 默认校徽路径
+\setuniversity{重庆大学国家卓越工程师学院}
+\setfaculty{XX大学XXXX学院}
+
+% 字体配置修复
+\setmainfont{Times New Roman} % 英文字体
+\setCJKmainfont{SimHei} % 中文字体，确保 SimHei 字体已安装
+
+% 封面宏命令
+\newcommand{\makecover}[8]{
+  \begin{titlepage}
+    \centering
+    
+    \vspace{2cm}
+    {\bfseries\zihao{-2} 重庆大学本科学生毕业论文（设计）}
+
+    % 论文题目（二号加粗带下划线）
+    \vspace{3cm}
+    \underline{\bfseries\zihao{2} #1}
+
+    % 校徽部分（垂直间距严格3cm）
+    \vspace*{3cm}
+    \includegraphics[width=4cm]{assets/images/CQU-logo.png} \\ % 确保路径正确
+    
+    % 信息表格（三号字1.5倍行距）
+    \vspace{3cm}
+    \begin{tabular}{@{}ll@{}}
+      \bfseries\zihao{3}学生姓名： & \zihao{3}#2 \\
+      \bfseries\zihao{3}学\quad 号： & \zihao{3}#3 \\
+      \bfseries\zihao{3}指导教师： & \zihao{3}#4 \\
+      \bfseries\zihao{3}助理教师： & \zihao{3}#5 \\
+      \bfseries\zihao{3}专\quad 业： & \zihao{3}#6 \\
+    \end{tabular}
+    
+    % 学院信息（小二号底部定位）
+    \vfill
+    {\bfseries\zihao{-2} 重庆大学国家卓越工程师学院} \\
+    %{\bfseries\zihao{-2} #7} \\
+    
+    % 日期规范（三号右对齐，黄色背景）
+    \vspace{1cm}
+    %\colorbox{yellow}{\hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}}
+    \hspace*{2em}\zihao{3}\bfseries #7年6月\hspace*{2em}
+  \end{titlepage}
+}
+
+\endinput

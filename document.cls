@@ -1,26 +1,28 @@
-% mytemplate.cls
+
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{document}[2023/10/01 Custom Template]
+\ProvidesClass{document}[2025 重庆大学本科论文模板]
 
-% 基类继承
-\LoadClass[UTF8, zihao=-4]{ctexart}
+% 基础配置
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
+\ProcessOptions\relax
+\LoadClass[a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
 
-% 字体配置
-% \setCJKmainfont[
-%   Path = ../config/fonts/,
-%   BoldFont = myhei.ttf
-% ]{mysong.ttf}
+% 页面设置
+\RequirePackage[paper=a4paper,
+  top=3cm,
+  bottom=2.5cm,
+  left=3.5cm,
+  right=3cm,
+  headheight=1.5cm]{geometry}
 
-% 图片路径设置
-\RequirePackage{graphicx}
-\graphicspath{{../assets/images/}}
+% 字体系统
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}
+\setCJKmainfont{SimHei}[
+  Path = ./config/fonts/,
+  BoldFont = SimHei.ttf,
+  Extension = .ttf
+]
 
-% 参考文献配置
-\RequirePackage[backend=biber]{biblatex}
-\addbibresource{../assets/bib/ref.bib}
-
-% 页面布局
-\RequirePackage[top=3cm, bottom=2.5cm, left=3cm, right=2cm]{geometry}
-
-% 自定义命令
-\newcommand{\email}[1]{\texttt{#1}}
+% 封面宏包路径
+\RequirePackage{config/style/cquthesis-cover}
