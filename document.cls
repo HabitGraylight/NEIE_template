@@ -11,8 +11,8 @@
 \RequirePackage[paper=a4paper,
   top=3cm,
   bottom=2.5cm,
-  left=3.5cm,
-  right=3cm,
+  left=2.5cm,
+  right=2.5cm,
   headheight=1.5cm]{geometry}
 
 % 字体系统
