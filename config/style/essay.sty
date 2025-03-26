@@ -1,66 +1,61 @@
 \ProvidesPackage{essay}[2025/03/26 Essay formatting for Chongqing University]
 
-% 加载必要宏包
-% \RequirePackage{fancyhdr} % 页眉页脚设置
-% \RequirePackage{titlesec} % 标题格式设置
-% \RequirePackage{caption}  % 图表标题格式设置
-% \RequirePackage{booktabs} % 表格线设置
-% \RequirePackage{amsmath}  % 数学公式支持
-% \RequirePackage{amssymb}  % 数学符号支持
+\RequirePackage{fancyhdr} % 页眉页脚设置
+\RequirePackage{titlesec} % 标题格式设置
+\RequirePackage{caption}  % 图表标题格式设置
+\RequirePackage{booktabs} % 表格线设置
+\RequirePackage{amsmath}  % 数学公式支持
+\RequirePackage{amssymb}  % 数学符号支持
 
-% % 页面设置
-% \fancypagestyle{essaystyle}{
-%   \fancyhf{} % 清空默认页眉页脚
-%   \fancyhead[LE,RO]{\thepage} % 奇数页和偶数页页码居中
-%   \fancyhead[LO]{\rightmark} % 奇数页页眉为章标题
-%   \fancyhead[RE]{重庆大学本科学生毕业论文（设计）} % 偶数页页眉
-%   \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
-%   \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
-% }
-% \pagestyle{essaystyle}
+% 页面设置
+\fancypagestyle{essaystyle}{
+  \fancyhf{} % 清空默认页眉页脚
+  \fancyhead[CE]{重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[CO]{\rightmark} % 奇数页页眉为节标题
+  \fancyfoot[C]{\thepage} % 页脚显示页码
+  \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
+  \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
+  
+}
+\pagestyle{essaystyle}
 
-% % 标题格式设置
-% \titleformat{\chapter}[hang]{\bfseries\zihao{-2}}{\thechapter}{1em}{}
-% \titleformat{\section}[hang]{\bfseries\zihao{-3}}{\thesection}{1em}{}
-% \titleformat{\subsection}[hang]{\bfseries\zihao{-4}}{\thesubsection}{1em}{}
-% \titleformat{\subsubsection}[hang]{\zihao{-4}}{\thesubsubsection}{1em}{}
+% 标题格式设置
+\titleformat{\chapter}[hang]{\bfseries\zihao{-2}}{\thechapter}{1em}{}
+\titleformat{\section}[hang]{\bfseries\zihao{3}}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\bfseries\zihao{-3}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\zihao{4}}{\thesubsubsection}{1em}{}
 
-% % 标题间距设置
-% \titlespacing*{\chapter}{0pt}{*2}{*1} % 章标题前后间距
-% \titlespacing*{\section}{0pt}{*1.5}{*0.5} % 节标题前后间距
-% \titlespacing*{\subsection}{0pt}{*1}{*0.5} % 小节标题前后间距
-% \titlespacing*{\subsubsection}{0pt}{*0.5}{*0.5} % 小小节标题前后间距
+% 标题间距设置
+\titlespacing*{\chapter}{0pt}{*2}{*1} % 章标题前后间距
+\titlespacing*{\section}{0pt}{*1.5}{*0.5} % 节标题前后间距
+\titlespacing*{\subsection}{0pt}{*1}{*0.5} % 小节标题前后间距
+\titlespacing*{\subsubsection}{0pt}{*0.5}{*0.5} % 小小节标题前后间距
 
-% % 表格标题格式
-% \captionsetup[table]{
-%   font={small}, % 五号字体
-%   labelfont={bf}, % 加粗
-%   labelsep=space, % 标签与标题之间空格
-%   justification=centering % 居中对齐
-% }
+% 表格标题格式
+\captionsetup[table]{
+  font={small}, % 五号字体
+  labelfont={bf}, % 加粗
+  labelsep=space, % 标签与标题之间空格
+  justification=centering, % 居中对齐
+  skip=5pt % 标题与表格之间的间距
+}
 
-% % 图标题格式
-% \captionsetup[figure]{
-%   font={small}, % 五号字体
-%   labelfont={bf}, % 加粗
-%   labelsep=space, % 标签与标题之间空格
-%   justification=centering % 居中对齐
-% }
+% 图标题格式
+\captionsetup[figure]{
+  font={small}, % 五号字体
+  labelfont={bf}, % 加粗
+  labelsep=space, % 标签与标题之间空格
+  justification=centering, % 居中对齐
+  skip=5pt % 标题与图之间的间距
+}
 
-% % 表格样式
-% \newcommand{\cqutable}[1]{
-%   \renewcommand{\arraystretch}{1.5} % 表格行距
-%   \begin{tabular}{#1}
-%     \toprule
-% }
+% 数学公式编号格式
+\numberwithin{equation}{section} % 按节编号公式，例如 3.1
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
 
-% % 数学公式编号格式
-% \numberwithin{equation}{section} % 按节编号公式，例如 3.1
-% \renewcommand{\theequation}{\thesection.\arabic{equation}}
+% 段落设置
+\setlength{\parindent}{2em} % 首行缩进2字符
+\setlength{\parskip}{0em} % 段间距为0
 
-% % 段落设置
-% \setlength{\parindent}{2em} % 首行缩进2字符
-% \setlength{\parskip}{0em} % 段间距为0
-
-% % 页码设置
-% \pagenumbering{arabic} % 页码为阿拉伯数字
+% 页码设置
+\pagenumbering{arabic} % 页码为阿拉伯数字
