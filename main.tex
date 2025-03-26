@@ -1,5 +1,7 @@
-% main.tex
+
 \documentclass{document}
+
+
 
 \begin{document}
 \makecovercn
@@ -22,16 +24,67 @@
   {chonghqing university}
   {2025} 
 
+\begin{cquabstract}
+    摘要是论文（设计）内容不加注释和评论的简短陈述，应以第三人称陈述。它应具有独立性和自含性，即不阅读论文（设计）的全文，就能获得必要的信息。
+摘要一般应说明研究工作的目的和意义、研究思想和方法、研究过程、研究结果和最终结论等。摘要中一般不用图、表、化学结构式、计算机程序，不用非公知公用的符号、术语和非法定的计量单位。
+摘要页置于英文题名页后。 
+中文摘要一般为300~400字，用宋体小四号。 
+关键词是指从论文（设计）的标题、摘要、正文中抽取的对表达论文（设计）主题起关键作用，且具有检索意义的词语。关键词应体现论文（设计）特色，具有语义性，在论文（设计）中有明确的出处。一般每篇论文（设计）应选取3-5个词作为关键词，以显著的字符另起一行，排在同种语言摘要的下方，尽量用《汉语主题词表》或各专业主题词表提供的规范词。
+\end{cquabstract}
   
+\begin{cqukeywords}
+    XXXX；XXXX；XXXX
+\end{cqukeywords}
+
+  % 英文摘要
+\begin{cquabstracten}
+  The abstract is a concise statement of the content of the thesis (design) without annotations or comments. It should be compact and refined.
+\end{cquabstracten}
+
+% 英文关键词
+\begin{cqukeywordsen}
+  XXXX; XXXX; XXXX
+\end{cqukeywordsen}
+  
+\begin{cqucontents}
+%   \tableofcontents
+\end{cqucontents}
 
 
-  \section{测试章节}
-使用自定义字体和图片路径：
-\begin{figure}[htbp]
-  \centering
-%   \includegraphics{fig1} % 自动搜索assets/images
-  \caption{架构图}
-\end{figure}
+% \chapter{荷载计算}
+% \section{基本荷载取值}
+% \subsection{活载取值}
+% 根据《荷载规范》，本工程上屋面活荷载取值为 $q_w = 1.5 \, \text{kN/m}^2$。
+% \subsubsection{材料荷载取值}
+% 填充墙荷载取值为……
+
+% \section{恒载计算}
+% ……
+% \begin{table}[htbp]
+%     \centering
+%     \caption{左风作用下简截计算}
+%     \begin{tabular}{cccccc}
+%       \toprule
+%       层次 & $Z(m)$ & $\mu$ & $\beta$ & $q_w (\text{kN/m}^2)$ & $W (\text{kN})$ \\
+%       \midrule
+%       1 & 4.5 & … & … & … & … \\
+%       2 & … & … & … & … & … \\
+%       \bottomrule
+%     \end{tabular}
+%   \end{table}
+
+% \section{风载计算}
+% 风载体型系数 $\mu$；风振系数 $\beta$；风压高度变化系数 $\mu_z$：
+% \begin{equation}
+%   W = \mu \mu_z \beta q_w
+% \end{equation}
+
+\chapter{研究内容}
+\section{理论分析}
+\subsection{模型建立}
+\subsubsection{模型dada}
+\subsection{实验设计}
+
 
 % 引用文献\cite{key2023}
 %\printbibliography

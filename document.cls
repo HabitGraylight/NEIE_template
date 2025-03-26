@@ -5,7 +5,7 @@
 % 基础配置
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
 \ProcessOptions\relax
-\LoadClass[a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
+\LoadClass[twoside,a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
 
 % 页面设置
 \RequirePackage[paper=a4paper,
@@ -24,5 +24,9 @@
   Extension = .ttf
 ]
 
-% 封面宏包路径
+% 加载我们设置的宏
 \RequirePackage{config/style/cquthesis-cover}
+\RequirePackage{config/style/abstract}
+\RequirePackage{config/style/content}
+\RequirePackage{config/style/essay}
+

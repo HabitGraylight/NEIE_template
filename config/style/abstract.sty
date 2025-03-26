@@ -1,0 +1,98 @@
+\ProvidesPackage{abstract}[2025/03/26 Abstract formatting for Chongqing University]
+
+%  fancyhdr 宏包用于页眉页脚设置
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+
+%\RequirePackage{afterpage}
+
+% 摘要页样式增强
+\fancypagestyle{abstractstylecn}{
+  \fancyhf{}
+  \fancyhead[LO]{重庆大学本科生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[RE]{摘要} % 偶数页页眉右侧
+  \fancyhead[RO]{摘要} % 奇数页页眉右侧
+  \fancyhead[LE]{重庆大学本科生毕业论文（设计）} % 奇数页页眉左侧
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+  
+  % 字号适配
+  \fancyheadoffset[L]{0.5em} % 左侧缩进补偿
+  \fancyheadoffset[R]{0.5em} % 右侧缩进补偿
+}
+
+\fancypagestyle{abstractstyleen}{
+  \fancyhf{}
+  \fancyhead[LO]{重庆大学本科生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[RE]{ABSTRACT} % 偶数页页眉右侧
+  \fancyhead[RO]{ABSTRACT} % 奇数页页眉右侧
+  \fancyhead[LE]{重庆大学本科生毕业论文（设计）} % 奇数页页眉左侧
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+  
+  % 字号适配
+  \fancyheadoffset[L]{0.5em} % 左侧缩进补偿
+  \fancyheadoffset[R]{0.5em} % 右侧缩进补偿
+}
+
+
+% 中文摘要环境修正
+\newenvironment{cquabstract}[1]{
+  \clearpage
+  \pagestyle{abstractstyleen}
+  \thispagestyle{abstractstylecn} % 关键修正
+  \setcounter{page}{1} % 页码初始化
+  \pagenumbering{Roman} % 大写罗马数字
+  \begin{center}
+    \vspace*{1cm} % 垂直定位补偿
+    {\bfseries\zihao{3} 摘\quad 要}
+    \vspace{20pt} % 精确行距
+  \end{center}
+  \linespread{1.618}\selectfont % 黄金比例行距
+  \zihao{-4}
+  #1
+}{
+  \vspace{\baselineskip} % 结束间距
+
+}
+
+% 关键词环境
+\newenvironment{cqukeywords}{
+  \par\vspace{1em} % 空一行
+  {\bfseries\zihao{-4} 关键词：} % 黑体小四号
+  \zihao{-4} % 小四号字体
+}{
+  \par % 结束
+  \vspace*{\fill} % 填充剩余空间
+  \newpage
+}
+
+% 英文摘要同步修正
+\newenvironment{cquabstracten}[1]{
+  \clearpage
+  \pagestyle{abstractstyleen}
+  \thispagestyle{abstractstyleen}
+  \begin{center}
+    \vspace*{1cm}
+    {\bfseries\zihao{3} ABSTRACT}
+    \vspace{20pt}
+  \end{center}
+  \linespread{1.618}\selectfont
+  \zihao{-4}
+  #1
+}{
+  \vspace{\baselineskip}
+}
+
+% 英文关键词环境
+\newenvironment{cqukeywordsen}{
+  \par\vspace{1em} % 空一行
+  {\bfseries\zihao{-4} Keywords:} % 黑体小四号
+  \zihao{-4} % 小四号字体
+}{
+  \par % 结束
+  \vspace*{\fill} % 填充剩余空间
+  % \newpage
+}

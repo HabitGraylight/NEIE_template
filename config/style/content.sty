@@ -1,0 +1,50 @@
+\ProvidesPackage{content}[2025/03/26 Table of Contents formatting for Chongqing University]
+
+% 加载必要宏包
+\RequirePackage{fancyhdr} % 页眉页脚设置
+\RequirePackage{tocloft}  % 目录格式设置
+\RequirePackage{titlesec} % 标题格式设置
+
+% 设置目录页页眉样式（适配 twoside）
+\fancypagestyle{contentstyle}{
+    \fancyhf{} % 清空默认页眉页脚
+    \fancyhead[LO]{重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+    \fancyhead[RE]{目录} % 偶数页页眉右侧
+    \fancyhead[RO]{目录} % 奇数页页眉右侧
+    \fancyhead[LE]{重庆大学本科学生毕业论文（设计）} % 奇数页页眉左侧
+    \fancyfoot[C]{\thepage} % 页脚中间显示页码
+    \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
+    \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
+}
+
+% 设置目录标题格式
+\renewcommand{\contentsname}{} % 标题，黑体二号，字间空两字符
+
+% 设置目录内容格式
+\renewcommand{\cftsecfont}{\bfseries\zihao{4}} % 节标题，小四号
+\renewcommand{\cftsubsecfont}{\bfseries\zihao{5}} % 小节标题，小四号
+\renewcommand{\cftsubsubsecfont}{\zihao{5}} % 小节标题，小四号
+\renewcommand{\cftsecpagefont}{\zihao{5}} % 节页码，小四号
+\renewcommand{\cftsubsecpagefont}{\zihao{5}} % 小节页码，小四号
+\renewcommand{\cftsubsubsecpagefont}{\zihao{5}} % 小节页码，小四号
+% 设置目录点线和缩进
+\renewcommand{\cftdotsep}{1} % 点线间距
+\setlength{\cftsecindent}{0em} % 节标题无缩进
+\setlength{\cftsubsecindent}{1em} % 小节标题缩进
+
+% 设置目录页环境
+\newenvironment{cqucontents}{
+  \clearpage % 独立占一页
+  \pagestyle{contentstyle} % 使用目录页样式
+  \thispagestyle{contentstyle} % 强制使用目录页样式
+  \begin{center}
+    \vspace*{1.4cm} % 调整顶部间距
+    {\bfseries\zihao{3} 目\quad 录} % 居中标题，黑体二号
+    \vspace{0.5cm} % 标题下方空白
+  \end{center}
+  \tableofcontents % 生成目录内容
+  \pagestyle{contentstyle} % 使用目录页样式
+  \thispagestyle{contentstyle} % 恢复页眉页脚
+}{
+  \newpage % 结束后换页
+}
