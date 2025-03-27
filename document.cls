@@ -18,15 +18,16 @@
 % 字体系统
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
-\setCJKmainfont{SimHei}[
+\setCJKmainfont{SimSun}[
   Path = ./config/fonts/,
   BoldFont = SimHei.ttf,
   Extension = .ttf
-]
+]%这里使用默认字体应该也是可以的,xelatex会自动使用系统的字体
 
 % 加载我们设置的宏
 \RequirePackage{config/style/cquthesis-cover}
 \RequirePackage{config/style/abstract}
 \RequirePackage{config/style/content}
 \RequirePackage{config/style/essay}
+\RequirePackage{config/style/reference}
 
