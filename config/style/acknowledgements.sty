@@ -1,0 +1,33 @@
+\ProvidesPackage{acknowledgements}
+
+\RequirePackage{titlesec} % 标题格式设置
+\RequirePackage{setspace} % 行距设置
+
+\titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
+
+\fancypagestyle{acknowledgementsstyle}{
+    \fancyhf{}
+    \if@twoside
+      \fancyhead[LE,LO]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+      \fancyhead[RE,RO]{\footnotesize 致谢}
+    \else
+      \fancyhead[R]{\footnotesize 致谢}
+      \fancyhead[L]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+    \fi
+    \fancyfoot[C]{\footnotesize \thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+
+
+\newenvironment{cquacknowledgements}{
+    \clearpage % 致谢从新的一页开始
+    \pagestyle{acknowledgementsstyle} % 使用致谢页眉页脚样式
+    % \thispagestyle{acknowledgementsstyle} % 双保险设置
+    \section*{\centering\bfseries\zihao{-3} 致 \quad 谢} % 致谢标题，黑体三号，居中
+    \vspace{1em} % 标题下空一行
+    \setstretch{1.25} % 行距固定为 20 磅,1,25倍大约就是20磅
+    \zihao{4} % 小四
+}{
+    \par % 结束致谢环境
+    \newpage
+}

@@ -8,11 +8,11 @@
 % 设置目录页页眉样式（适配 twoside）
 \fancypagestyle{contentstyle}{
     \fancyhf{} % 清空默认页眉页脚
-    \fancyhead[LO]{重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
-    \fancyhead[RE]{目录} % 偶数页页眉右侧
-    \fancyhead[RO]{目录} % 奇数页页眉右侧
-    \fancyhead[LE]{重庆大学本科学生毕业论文（设计）} % 奇数页页眉左侧
-    \fancyfoot[C]{\thepage} % 页脚中间显示页码
+    \fancyhead[LO]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+    \fancyhead[RE]{\footnotesize 目录} % 偶数页页眉右侧
+    \fancyhead[RO]{\footnotesize 目录} % 奇数页页眉右侧
+    \fancyhead[LE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 奇数页页眉左侧
+    \fancyfoot[C]{\footnotesize \thepage} % 页脚中间显示页码
     \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
     \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
 }
@@ -36,7 +36,7 @@
 \newenvironment{cqucontents}{
   \clearpage % 独立占一页
   \pagestyle{contentstyle} % 使用目录页样式
-  \thispagestyle{contentstyle} % 强制使用目录页样式
+  %\thispagestyle{contentstyle} % 强制使用目录页样式
   \begin{center}
     \vspace*{1.4cm} % 调整顶部间距
     {\bfseries\zihao{3} 目\quad 录} % 居中标题，黑体二号

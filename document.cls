@@ -30,4 +30,5 @@
 \RequirePackage{config/style/content}
 \RequirePackage{config/style/essay}
 \RequirePackage{config/style/reference}
-
+\RequirePackage{config/style/appendix}
+\RequirePackage{config/style/acknowledgements}

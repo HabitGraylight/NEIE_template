@@ -1,0 +1,55 @@
+\ProvidesPackage{appendix}
+
+\RequirePackage{titlesec} % 标题格式设置
+\RequirePackage{setspace} % 行距设置
+\RequirePackage{fancyhdr} % 页眉页脚设置
+\RequirePackage{listings} % 加载代码高亮宏包
+
+
+\titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
+
+\fancypagestyle{appendixstyle}{
+    \fancyhf{}
+    \if@twoside
+      \fancyhead[LE,LO]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+      \fancyhead[RE,RO]{\footnotesize 附录 \leftmark}
+    \else
+      \fancyhead[R]{\footnotesize 附录 \leftmark}
+      \fancyhead[L]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+    \fi
+    \fancyfoot[C]{\footnotesize \thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\newenvironment{cquappendix}[1]{
+    \clearpage % 附录从新的一页开始
+    \markboth{#1}{#1} % 手动设置 \leftmark 为附录标题
+    \pagestyle{appendixstyle} % 使用附录页眉页脚样式
+    %\renewcommand{\cleardoublepage}{\clearpage}
+    %thispagestyle{appendixstyle} % 双保险设置
+    \markboth{#1}{#1}
+    \section*{\centering\bfseries\zihao{-3} 附录 #1} % 附录标题，黑体三号，居中
+    \vspace{20pt} % 标题下空一行
+    \setstretch{1.25} % 行距固定为 20 磅
+    \zihao{-5} % 五号字体
+}{
+    \par % 结束附录环境
+    \newpage
+}
+
+\lstset{
+    basicstyle=\ttfamily\zihao{-5}, % 设置代码字体为等宽字体，小五号
+    numbers=left, % 显示行号
+    numberstyle=\tiny, % 行号字体
+    stepnumber=1, % 每行显示行号
+    frame=single, % 添加边框
+    breaklines=true, % 自动换行
+    captionpos=b, % 标题位置
+    tabsize=4, % Tab 宽度
+    frame=shadowbox, % 增强边框效果
+    language=Python, % 默认语言
+    belowskip=0pt,
+    aboveskip=0pt,
+    captionpos=top,
+    floatplacement=H
+}
