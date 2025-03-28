@@ -17,12 +17,19 @@
   \renewcommand{\footrulewidth}{0pt} % 页脚无下划线 
 }
 %\pagestyle{essaystyle}
-
+\renewcommand{\thesection}{\arabic{section}} % 设置节编号为阿拉伯数字
 % 标题格式设置
 \titleformat{\chapter}[hang]{\bfseries\zihao{-2}}{\thechapter}{1em}{}
-\titleformat{\section}[hang]{\bfseries\zihao{3}}{\thesection}{1em}{}
+% \titleformat{\section}[hang]{\bfseries\zihao{3}}{\thesection}{1em}{}
+\titleformat{\section}[hang] % 悬挂式对齐
+  {\normalfont\zihao{-3}\bfseries\filcenter} % 三号黑体居中
+  {\thesection\ } % 编号后加空格
+  {1pt} % 标签与标题间距
+  {} % 前缀格式
 \titleformat{\subsection}[hang]{\bfseries\zihao{-3}}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[hang]{\zihao{4}}{\thesubsubsection}{1em}{}
+
+
 
 % 标题间距设置
 \titlespacing*{\chapter}{0pt}{*2}{*1} % 章标题前后间距
@@ -47,6 +54,13 @@
   justification=centering, % 居中对齐
   skip=5pt % 标题与图之间的间距
 }
+% 图编号格式
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\numberwithin{figure}{section} % 按节编号图，例如 3.1
+
+% 表编号格式
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\numberwithin{table}{section} % 按节编号表，例如 3.1
 
 % 数学公式编号格式
 \numberwithin{equation}{section} % 按节编号公式，例如 3.1

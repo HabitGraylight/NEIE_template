@@ -1,6 +1,6 @@
 
 \documentclass{document}
-\usepackage[backend=biber,style=gb7714-2015]{biblatex} % 使用国标样式
+\usepackage[backend=biber,style=gb7714-2015]{biblatex} % cqu毕设论文引用格式,国标
 \addbibresource{assets/bib/references.bib} % 加载参考文献数据库
 
 
@@ -10,33 +10,40 @@
   {学生姓名}
   {学号}
   {指导教师}
-  {助理教师}
+  {}%助理老师(选填)
   {专业}
-  {国家卓越工程师学院}
+  {}%原学校(选填)
   {2025}
 
 \makecoveren
   {XXX Computational Model}
   {WANG Jianhua}
   {Prof. YANG XX}
-  {Associate Prof. LI XX} 
+  {} %第二个导师(选填)
   {Intelligent Connected Vehicle}
-  {Intelligent Manufacturing}
-  {chonghqing university}
+  {Intelligent Manufacturing}%第二个专业(选填)
+  {} %原学校(选填)
   {2025} 
 
+
+\addcontentsline{toc}{section}{摘要}  
 \begin{cquabstract}
-    摘要是论文（设计）内容不加注释和评论的简短陈述，应以第三人称陈述。它应具有独立性和自含性，即不阅读论文（设计）的全文，就能获得必要的信息。
+%空一行会自动换自然段,一段文字后使用\\会换行但没有段首缩进
+
+摘要是论文（设计）内容不加注释和评论的简短陈述，应以第三人称陈述。它应独立性和自含性，即不阅读论文（设计）的全文，就能获得必要的信息。\\
+
 摘要一般应说明研究工作的目的和意义、研究思想和方法、研究过程、研究结果和最终结论等。摘要中一般不用图、表、化学结构式、计算机程序，不用非公知公用的符号、术语和非法定的计量单位。
+
 摘要页置于英文题名页后。 
-中文摘要一般为300~400字，用宋体小四号。 
-关键词是指从论文（设计）的标题、摘要、正文中抽取的对表达论文（设计）主题起关键作用，且具有检索意义的词语。关键词应体现论文（设计）特色，具有语义性，在论文（设计）中有明确的出处。一般每篇论文（设计）应选取3-5个词作为关键词，以显著的字符另起一行，排在同种语言摘要的下方，尽量用《汉语主题词表》或各专业主题词表提供的规范词。
+中文摘要一般为300~400字，用宋体小四号。 \\
+关键词是指从论文（设计）的标题、摘要、正文中抽取的对表达论文（设计）主题起关键作用，且具有检索意义的词语。关键词应体现论文（设计）特色，具有语义性，在论文（设计）中有明确的出处。一般每篇论文（设计）应选取3-5个词作为关键词，以显著的字符另起一行，排在同种语言摘要的下方，尽量用《汉语主题词表》或各专业主题词表提供的规范词。\\
 \end{cquabstract}
   
-\begin{cqukeywords}
+\begin{cqukeywords}%中文分号
     XXXX；XXXX；XXXX
 \end{cqukeywords}
 
+\addcontentsline{toc}{section}{ABSTRACT}  
   % 英文摘要
 \begin{cquabstracten}
   The abstract is a concise statement of the content of the thesis (design) without annotations or comments. It should be compact and refined.
@@ -48,12 +55,12 @@
 \end{cqukeywordsen}
   
 \begin{cqucontents}
-%   \tableofcontents
+
 \end{cqucontents}
 
 
 
-
+%下面就是正文了
 \pagestyle{essaystyle}
 \pagenumbering{arabic} % 页码为阿拉伯数字
 
@@ -75,14 +82,31 @@
 摘要是论文（设计）内容不加注释和评论的简短陈述，应以第三人称陈述。它应具有独立性和自含性，即不阅读论文（设计）的全文，就能获得必要的信息。
 摘要一般应说明研究工作的目的和意义、研究思想和方法、研究过程、研究结果和最终结论等。摘要中一般不用图、表、化学结构式、计算机程序，不用非公知公用的符号、术语和非法定的计量单位。\cite{YXXY20250307001}
 摘要页置于英文题名页后。 
-中文摘要一般为300~400字，用宋体小四号。 
-关键词是指从论文（设计）的标题、摘要、正文中抽取的对表达论文（设计）主题起关键作用，且具有检索意义的词语。关键词应体现论文（设计）特色，具有语义性，在论文（设计）中有明确的出处。一般每篇论文（设计）应选取3-5个词作为关键词，以显著的字符另起一行，排在同种语言摘要的下方，尽量用《汉语主题词表》或各专业主题词表提供的规范词。\cite{10.1145/3583780.3615277}
+中文摘要一般为300~400字，用宋体小四号。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{assets/images/image.png}
+    \caption{模型示意图}
+    \label{fig:model}%可加可不加
+\end{figure}
+
+关键词是指从论文（设计）的标题、摘要、正文中抽取的对表达论文（设计）主题起关键作用，且具有检索意义的词语。关键词应体现论文（设计）特色，具有语义性，在论文（设计）中有明确的出处。一般每篇论文（设计）应选取3-5个词作为关键词，以显著的字符另起一行，排在同种语言摘要的下方，尽量用《汉语主题词表》或各专业主题词表提供的规范词。\cite{10.1145/3583780.3615277}  
 
 \section{理论分析}
+
 \subsection{模型建立}
+
+如图所示，建立了一个简化的模型来分析结构的受力情况。模型中考虑了主要的荷载和边界条件。
+
+
+
+对对对
+
 \subsubsection{模型dada}
 根据《荷载规范》，本工程上屋面活荷载取值为 $q_w = 1.5 \, \text{kN/m}^2$。
 
+%表格模板,可以参考一下,个人latex的表格非常方便而且好更改
 \begin{table}[htbp]
     \centering
     \caption{左风作用下简截计算}
@@ -94,7 +118,7 @@
       2 & … & … & … & … & … \\
       \bottomrule
     \end{tabular}
-  \end{table}
+\end{table}
 \subsection{实验设计}
 摘要是论文（设计）内容不加注释和评论的简短陈述，应以第三人称陈述。它应具有独立性和自含性，即不阅读论文（设计）的全文，就能获得必要的信息。
 摘要一般应说明研究工作的目的和意义、研究思想和方法、研究过程、研究结果和最终结论等。摘要中一般不用图、表、化学结构式、计算机程序，不用非公知公用的符号、术语和非法定的计量单位。
@@ -106,7 +130,8 @@
 
 % 引用文献\cite{key2023}
 \clearpage
-\pagestyle{essaystyle}
+% \pagestyle{essaystyle}
+\addcontentsline{toc}{section}{参考文献}  
 \printbibliography
 
 
@@ -281,6 +306,5 @@
                               感谢同学们的支持与帮助；\\
 
 \end{cquacknowledgements}
-
 
 \end{document}

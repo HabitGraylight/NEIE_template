@@ -6,7 +6,7 @@
 \RequirePackage{listings} % 加载代码高亮宏包
 
 
-\titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
+% \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
 
 \fancypagestyle{appendixstyle}{
     \fancyhf{}
@@ -28,7 +28,9 @@
     %\renewcommand{\cleardoublepage}{\clearpage}
     %thispagestyle{appendixstyle} % 双保险设置
     \markboth{#1}{#1}
+    \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
     \section*{\centering\bfseries\zihao{-3} 附录 #1} % 附录标题，黑体三号，居中
+    \addcontentsline{toc}{section}{附录 #1} % 将附录标题添加到目录中
     \vspace{20pt} % 标题下空一行
     \setstretch{1.25} % 行距固定为 20 磅
     \zihao{-5} % 五号字体
@@ -48,7 +50,7 @@
     tabsize=4, % Tab 宽度
     frame=shadowbox, % 增强边框效果
     language=Python, % 默认语言
-    belowskip=0pt,
+    belowskip=0pt, %下面是防止换页出bug
     aboveskip=0pt,
     captionpos=top,
     floatplacement=H

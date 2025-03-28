@@ -31,17 +31,20 @@
 \renewcommand{\cftdotsep}{1} % 点线间距
 \setlength{\cftsecindent}{0em} % 节标题无缩进
 \setlength{\cftsubsecindent}{1em} % 小节标题缩进
+\setlength{\cftsubsubsecindent}{2em} % 小节标题缩进
 
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % 为section级别添加点线
 % 设置目录页环境
 \newenvironment{cqucontents}{
   \clearpage % 独立占一页
   \pagestyle{contentstyle} % 使用目录页样式
-  %\thispagestyle{contentstyle} % 强制使用目录页样式
   \begin{center}
-    \vspace*{1.4cm} % 调整顶部间距
+    \vspace*{0.1cm} % 调整顶部间距
     {\bfseries\zihao{3} 目\quad 录} % 居中标题，黑体二号
-    \vspace{0.5cm} % 标题下方空白
+    % \vspace{0.2cm} % 标题下方空白
   \end{center}
+  % \setlength{\parskip}{0pt} % 段间距为0
+  % \setlength{\baselineskip}{20pt} % 设置目录行距固定为20磅
   \tableofcontents % 生成目录内容
   \pagestyle{contentstyle} % 使用目录页样式
   \thispagestyle{contentstyle} % 恢复页眉页脚

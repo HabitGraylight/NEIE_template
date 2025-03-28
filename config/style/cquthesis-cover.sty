@@ -17,7 +17,7 @@
 % 默认配置
 \setschoolbadge{assets/images/CQU-logo.png} % 默认校徽路径
 \setuniversity{重庆大学国家卓越工程师学院}
-\setfaculty{XX大学XXXX学院}
+\setfaculty{XX大学XXXX学院} 
 
 % 字体配置修复
 \setmainfont{Times New Roman} % 英文字体
@@ -46,15 +46,20 @@
       \bfseries\zihao{3}学\quad \quad 生： & \zihao{3}#2 \\
       \bfseries\zihao{3}学\quad \quad 号： & \zihao{3}#3 \\
       \bfseries\zihao{3}指导教师： & \zihao{3}#4 \\
+      \ifx#5\empty
+      \else
       \bfseries\zihao{3}助理指导教师： & \zihao{3}#5 \\
+      \fi
       \bfseries\zihao{3}专\quad \quad 业： & \zihao{3}#6 \\
     \end{tabular}
     
     % 学院信息（小二号底部定位）
     \vfill
     {\bfseries\zihao{-2} 重庆大学国家卓越工程师学院} \\
+    \ifx#7\empty
+    \else
     {\bfseries\zihao{-2} #7} \\
-    
+    \fi
     % 日期规范
     \vspace{1cm}
     %\colorbox{yellow}{\hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}}
@@ -81,20 +86,31 @@
       
       % 导师信息（Supervised by + 换行）
       {\zihao{3} \textbf{Supervised by}} \\
-      {\bfseries\zihao{3} #3 \\ and \\ #4} \\[0.5cm]
+      {\bfseries\zihao{3} #3 
+      \ifx#4\empty
+      \else
+       \\ and \\ #4
+       \fi} \\[1.5cm]
+      
       
       % 专业信息（双专业换行）
       \begin{minipage}{0.8\textwidth}
         \centering
         {\bfseries\zihao{-2} 
-        #5 \\ #6}
-      \end{minipage} \\[0.5cm]
+        #5} \\
+        \ifx#6\empty
+        \else
+        {\bfseries\zihao{-2} #6}
+        \fi
+      \end{minipage} \\[0.1cm]
       
       % 学院信息（小二号底部定位）
       \vfill
       {\bfseries\zihao{3} National Elite Institute of Engineering,Chongqing University} \\
+      \ifx#7\empty
+      \else
       {\bfseries\zihao{-2} #7} \\[0.5cm]
-      
+      \fi
       % 日期（右对齐）
       {\bfseries\zihao{4} June, #8}
     }

@@ -3,7 +3,7 @@
 \RequirePackage{titlesec} % 标题格式设置
 \RequirePackage{setspace} % 行距设置
 
-\titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
+% \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
 
 \fancypagestyle{acknowledgementsstyle}{
     \fancyhf{}
@@ -23,7 +23,9 @@
     \clearpage % 致谢从新的一页开始
     \pagestyle{acknowledgementsstyle} % 使用致谢页眉页脚样式
     % \thispagestyle{acknowledgementsstyle} % 双保险设置
+    \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
     \section*{\centering\bfseries\zihao{-3} 致 \quad 谢} % 致谢标题，黑体三号，居中
+    \addcontentsline{toc}{section}{致谢} % 添加到目录
     \vspace{1em} % 标题下空一行
     \setstretch{1.25} % 行距固定为 20 磅,1,25倍大约就是20磅
     \zihao{4} % 小四
