@@ -4,15 +4,12 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 
-%\RequirePackage{afterpage}
-
-% 摘要页样式增强
 \fancypagestyle{abstractstylecn}{
   \fancyhf{}
-  \fancyhead[LO]{\footnotesize 重庆大学本科生毕业论文（设计）} % 偶数页页眉左侧
-  \fancyhead[RE]{\footnotesize 摘要} % 偶数页页眉右侧
-  \fancyhead[RO]{\footnotesize 摘要} % 奇数页页眉右侧
-  \fancyhead[LE]{\footnotesize 重庆大学本科生毕业论文（设计）} % 奇数页页眉左侧
+  \fancyhead[LO]{\footnotesize 重庆大学本科生毕业论文（设计）} 侧
+  \fancyhead[RE]{\footnotesize 摘要} 
+  \fancyhead[RO]{\footnotesize 摘要} 
+  \fancyhead[LE]{\footnotesize 重庆大学本科生毕业论文（设计）} 
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -20,7 +17,7 @@
   % 字号适配
   \fancyheadoffset[L]{0.5em} % 左侧缩进补偿
   \fancyheadoffset[R]{0.5em} % 右侧缩进补偿
-}
+}%这里是设置摘要页面样式
 
 \fancypagestyle{abstractstyleen}{
   \fancyhf{}
@@ -29,8 +26,8 @@
   \fancyhead[RO]{\footnotesize\setmainfont{Times New Roman} ABSTRACT} % 奇数页页眉右侧
   \fancyhead[LE]{\footnotesize 重庆大学本科生毕业论文（设计）} % 奇数页页眉左侧
   \fancyfoot[C]{\footnotesize \thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \renewcommand{\footrulewidth}{0pt}
+  \renewcommand{\headrulewidth}{0.4pt}%页眉的那根线
+  \renewcommand{\footrulewidth}{0pt}%页脚不要线
   
   % 字号适配
   \fancyheadoffset[L]{0.5em} % 左侧缩进补偿
@@ -42,7 +39,7 @@
 \newenvironment{cquabstract}[1]{
   \clearpage
   \pagestyle{abstractstyleen}
-  \thispagestyle{abstractstylecn} % 关键修正
+  \thispagestyle{abstractstylecn} % 有时候会出bug, 但是改起来很麻烦,(shi山代码就是这么来的)
   \setcounter{page}{1} % 页码初始化
   \pagenumbering{Roman} % 大写罗马数字
   \begin{center}
@@ -55,7 +52,6 @@
   #1
 }{
   \vspace{\baselineskip} % 结束间距
-
 }
 
 % 关键词环境
@@ -65,8 +61,7 @@
   \zihao{-4} % 小四号字体
 }{
   \par % 结束
-  \vspace*{\fill} % 填充剩余空间
-  \newpage
+  \vspace*{\fill} % 填充剩余空间,删了应该也行
 }
 
 % 英文摘要同步修正

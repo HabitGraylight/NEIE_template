@@ -16,7 +16,6 @@
   \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
   \renewcommand{\footrulewidth}{0pt} % 页脚无下划线 
 }
-%\pagestyle{essaystyle}
 \renewcommand{\thesection}{\arabic{section}} % 设置节编号为阿拉伯数字
 % 标题格式设置
 \titleformat{\chapter}[hang]{\bfseries\zihao{-2}}{\thechapter}{1em}{}
@@ -26,10 +25,9 @@
   {\thesection\ } % 编号后加空格
   {1pt} % 标签与标题间距
   {} % 前缀格式
+  %这里设置了很多次,可以设一个中心样式文件统一管理,这里懒得改了,多的我直接注释或者放进环境中了,这次的应该是全局生效的
 \titleformat{\subsection}[hang]{\bfseries\zihao{-3}}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[hang]{\zihao{4}}{\thesubsubsection}{1em}{}
-
-
+\titleformat{\subsubsection}[hang]{\bfseries\zihao{4}}{\thesubsubsection}{1em}{}
 
 % 标题间距设置
 \titlespacing*{\chapter}{0pt}{*2}{*1} % 章标题前后间距
@@ -71,7 +69,7 @@
 \setlength{\parskip}{0em} % 段间距为0
 
 % 页码设置
-% \pagenumbering{arabic} % 页码为阿拉伯数字
+% 下面的弃用了...
 \newenvironment{essaysection}{
     \begingroup % 开始局部环境
     \pagestyle{essaystyle} % 启用 essaystyle 样式
