@@ -1,4 +1,3 @@
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{document}[2025 重庆大学本科论文模板]
 
@@ -23,6 +22,15 @@
   BoldFont = SimHei.ttf,
   Extension = .ttf
 ]%这里使用默认字体应该也是可以的,xelatex会自动使用系统的字体
+
+%设置全局的章节标题后的第一段首缩进
+\usepackage{indentfirst}
+%调节列表环境的缩进
+\usepackage{enumitem}
+%算法公式之类的环境
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
 
 % 加载我们设置的宏
 \RequirePackage{config/style/cquthesis-cover}

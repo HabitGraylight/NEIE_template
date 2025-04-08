@@ -43,9 +43,11 @@
     {\bfseries\zihao{3} 目\quad 录} % 居中标题，黑体二号
     % \vspace{0.2cm} % 标题下方空白
   \end{center}
+  \addtocontents{toc}{\protect\thispagestyle{contentstyle}} % 强制第一页使用 contentstyle
   \tableofcontents % 生成目录内容
-  \pagestyle{contentstyle} % 使用目录页样式
   \thispagestyle{contentstyle} % 恢复页眉页脚
+  \pagestyle{contentstyle} % 使用目录页样式
+  
 }{
   \newpage % 结束后换页
 }

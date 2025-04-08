@@ -1,4 +1,3 @@
-@echo off
 :: 使用 xelatex 编译一次 main.tex
 xelatex main.tex
 

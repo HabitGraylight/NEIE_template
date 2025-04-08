@@ -6,7 +6,7 @@
 
 \fancypagestyle{abstractstylecn}{
   \fancyhf{}
-  \fancyhead[LO]{\footnotesize 重庆大学本科生毕业论文（设计）} 侧
+  \fancyhead[LO]{\footnotesize 重庆大学本科生毕业论文（设计）} 
   \fancyhead[RE]{\footnotesize 摘要} 
   \fancyhead[RO]{\footnotesize 摘要} 
   \fancyhead[LE]{\footnotesize 重庆大学本科生毕业论文（设计）} 
@@ -47,8 +47,10 @@
     {\bfseries\zihao{3} 摘\quad 要}
     \vspace{20pt} % 精确行距
   \end{center}
-  \linespread{1.618}\selectfont % 黄金比例行距
+  \setlength{\baselineskip}{20pt} % 固定行距为 20 磅
   \zihao{-4}
+  \setlength{\parskip}{0pt} % 设置段间距为 0
+  \setlength{\parindent}{2em} % 设置段首缩进
   #1
 }{
   \vspace{\baselineskip} % 结束间距
@@ -74,8 +76,10 @@
     {\bfseries\zihao{3} ABSTRACT}
     \vspace{20pt}
   \end{center}
-  \linespread{1.618}\selectfont
+  \setlength{\baselineskip}{20pt} % 固定行距为 20 磅
   \zihao{-4}
+  \setlength{\parskip}{0pt} % 设置段间距为 0
+  \setlength{\parindent}{2em} % 设置段首缩进
   #1
 }{
   \vspace{\baselineskip}
