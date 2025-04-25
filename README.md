@@ -16,9 +16,11 @@
 
 ## 简介
 
-毕设论文模板, 根据重庆大学卓工院发布的 Word 模板格式制作。
+毕设论文模板, 根据重庆大学卓工院发布的 Word 模板格式以及重庆大学毕业论文规范制作。
 
-推荐工作流：[TeX Live](https://www.tug.org/texlive/) + [VS Code (LaTeX Workshop Extension)](https://code.visualstudio.com/) / [TeXStudio](https://www.texstudio.org/)
+推荐工作流：[TeX Live](https://www.tug.org/texlive/) + [VS Code (LaTeX Workshop Extension)](https://code.visualstudio.com/) / [TeXStudio](https://www.texstudio.org/)，overleaf没有测试，但是应该也可以
+
+有问题请加q2198266904，每年模板可能有变动，维护靠大家
 
 ---
 
