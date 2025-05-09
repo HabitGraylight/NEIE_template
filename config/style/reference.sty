@@ -4,11 +4,37 @@
 \RequirePackage{titlesec} % 标题格式设置
 \RequirePackage{setspace} % 行距设置
 \RequirePackage{xeCJK} % 中文字体支持
-% \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
+\RequirePackage[backend = biber, style = gb7714-2015, gbalign = left]{biblatex} %加入gbalign=left，确保文献序号左端对齐
 
 % 设置参考文献字体
-\setCJKmainfont{SimSun}[
-    Path = ./config/fonts/,
-    BoldFont = SimHei.ttf,
-    Extension = .ttf]% 中文宋体
+\setCJKmainfont{SimSun}[Path = ./config/fonts/, BoldFont = SimHei.ttf, Extension = .ttf]
 \setmainfont{Times New Roman} % 英文 Times New Roman
+
+% 设置参考文献标题格式（每个字之间空格）
+\titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{\hspace{0.8em}\thesection\hspace{0.8em}}{0pt}{}
+
+% 定义参考文献部分的页眉样式
+\fancypagestyle{bibstyle}{
+  \fancyhf{} % 清空页眉页脚
+  \fancyhead[C]{\footnotesize 参考文献} % 设置参考文献页眉为“参考文献”
+  \fancyfoot[C]{\footnotesize \thepage} % 页脚显示页码
+  \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
+  \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
+}
+
+% 在参考文献部分输出标题和内容 
+% 正文中使用\bibcustom将参考文献添加生成
+\newcommand{\bibcustom}{
+    \begingroup
+    \pagestyle{bibstyle} % 设置参考文献部分的页眉样式为 bibstyle
+    \setlength{\parskip}{1em} % 设置参考文献后的空行
+
+    % 手动向目录添加不带空格的标题
+    \addcontentsline{toc}{section}{参考文献}
+
+    % 实际显示为带空格的标题
+    \section*{参\hspace{1em}考\hspace{1em}文\hspace{1em}献}
+
+    \printbibliography[heading=none]
+    \endgroup
+}
