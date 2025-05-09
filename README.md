@@ -24,6 +24,22 @@
 
 ---
 
+## 使用 VSCode 配置 LaTeX 环境
+
+要在 VSCode 中配置 LaTeX 编译环境，请参考以下详细教程：[使用 VSCode 配置 LaTeX 环境](https://blog.csdn.net/qq_45952740/article/details/131004722)。
+
+该文章详细介绍了如何安装 LaTeX Workshop 插件、配置 LaTeX 工具链以及在 VSCode 中进行 LaTeX 编译的步骤。
+
+### 主要步骤包括：
+1. 安装 LaTeX 发行版（如 MiKTeX 或 TeX Live）。
+2. 在 VSCode 中安装 LaTeX Workshop 插件。
+3. 配置 LaTeX 工具链以支持自动编译和 PDF 预览。
+4. 编写并编译 LaTeX 文档。
+
+更多细节和配置方法，请参考上述链接中的文章。
+
+---
+
 ## 安装与使用
 
 1. 确保已安装 [TeX Live](https://www.tug.org/texlive/)  
