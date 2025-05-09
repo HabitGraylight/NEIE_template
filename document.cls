@@ -30,6 +30,8 @@
 %算法公式之类的环境
 \usepackage{algorithm}
 \usepackage{algorithmic}
+%表格改进包
+\usepackage{tabularx}
 
 
 % 加载我们设置的宏
@@ -40,5 +42,6 @@
 \RequirePackage{config/style/reference}
 \RequirePackage{config/style/appendix}
 \RequirePackage{config/style/acknowledgements}
+
 
 \RequirePackage[nottoc]{tocbibind}%手动添加标题到目录所用的包

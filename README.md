@@ -9,6 +9,8 @@
 - [NEIE\_template](#neie_template)
   - [目录](#目录)
   - [简介](#简介)
+  - [使用 VSCode 配置 LaTeX 环境](#使用-vscode-配置-latex-环境)
+    - [主要步骤包括：](#主要步骤包括)
   - [安装与使用](#安装与使用)
   - [文件结构](#文件结构)
 
@@ -21,6 +23,7 @@
 推荐工作流：[TeX Live](https://www.tug.org/texlive/) + [VS Code (LaTeX Workshop Extension)](https://code.visualstudio.com/) / [TeXStudio](https://www.texstudio.org/)，overleaf没有测试，但是应该也可以
 
 有问题请加q2198266904，每年模板可能有变动，维护靠大家
+欢迎fork
 
 ---
 

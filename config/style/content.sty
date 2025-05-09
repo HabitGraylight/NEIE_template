@@ -1,33 +1,32 @@
 \ProvidesPackage{content}[2025/03/26 Table of Contents formatting for Chongqing University]
 
-% 加载必要宏包（hyperref 必须放在最后）
+% 加载必要宏包（确保加载顺序正确）
 \RequirePackage{fancyhdr}
 \RequirePackage{tocloft}
 \RequirePackage{titlesec}
-% 必须添加的宏包（关键修复）
-\RequirePackage[hypertexnames=true,  % 修复交叉引用
-                bookmarksnumbered,   % 书签带编号
-                bookmarksopen=true,  % 展开书签
-                pdfstartview=FitH,    % 默认视图
-                colorlinks=false,     % 打印版本建议关闭颜色
-                pdfborder={0 0 0}    % 无边框链接
-]{hyperref}
+\RequirePackage{xcolor} % 确保加载 xcolor 以支持颜色设置
+\RequirePackage{hyperref} % 确保加载 hyperref，且放在最后
+\RequirePackage{etoolbox} % 加载 etoolbox 以支持 \pretocmd
+
+% 修复 hyperref 的配置问题
+\hypersetup{
+  hypertexnames=true,  % 修复交叉引用
+  bookmarksnumbered,   % 书签带编号
+  bookmarksopen=true,  % 展开书签
+  pdfstartview=FitH,   % 默认视图
+  colorlinks=false,    % 打印版本建议关闭颜色
+  pdfborder={0 0 0}    % 无边框链接
+}
 
 \RequirePackage{atbegshi}
 \newif\if@inabstracten
 \@inabstractenfalse
-
-
-
-
 
 \AtBeginShipout{%
   \if@inabstracten
     \thispagestyle{abstractstyleen}%
   \fi
 }
-
-
 
 % 设置目录页页眉样式
 \fancypagestyle{contentstyle}{
@@ -43,8 +42,6 @@
     \let\ps@plain\ps@fancy
     \makeatother
 }
-
-
 
 % 设置目录标题格式
 \renewcommand{\contentsname}{} % 标题，黑体二号，字间空两字符
@@ -69,7 +66,7 @@
 \pretocmd{\tableofcontents}{%
   \newpage % 使用 newpage 避免插入空白页
   \phantomsection % 正确生成锚点
-  \addcontentsline{toc}{chapter}{\contentsname} % 可选：手动添加目录条目
+  \addcontentsline{toc}{chapter}{\contentsname} % 手动添加目录条目
   \pdfbookmark[0]{目\quad 录}{toc} % PDF书签
 }{}{}
 \makeatother

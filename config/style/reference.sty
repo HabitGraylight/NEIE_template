@@ -26,7 +26,8 @@
 % 正文中使用\bibcustom将参考文献添加生成
 \newcommand{\bibcustom}{
     \begingroup
-    \pagestyle{bibstyle} % 设置参考文献部分的页眉样式为 bibstyle
+    \clearpage % 确保参考文献部分从新页开始
+    \pagestyle{bibstyle} % 强制应用参考文献页眉样式
     \setlength{\parskip}{1em} % 设置参考文献后的空行
 
     % 手动向目录添加不带空格的标题
@@ -37,4 +38,5 @@
 
     \printbibliography[heading=none]
     \endgroup
+    \thispagestyle{bibstyle} % 确保当前页也使用 bibstyle
 }
