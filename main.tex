@@ -1,4 +1,5 @@
-\documentclass{document}
+%这里更改单面打印或者是双面打印，参数oneside/twoside
+\documentclass[twoside]{document}
 \usepackage{reference} % 引用参考文献自定义包
 \addbibresource{assets/bib/references.bib} % 加载参考文献数据库
 %文献引用使用bibtex,把信息放在assets/bib/references.bib中,在文中引用形式请看下面正文的"研究背景"处
@@ -24,7 +25,7 @@
   {Intelligent Connected VehicleIntelligent Connected VehicleIntelligent Connected} %原学校(选填)
   {2025} 
 
-\addcontentsline{toc}{section}{摘要}  
+
 \begin{cquabstract}
 %空一行会自动换自然段
 
@@ -41,7 +42,7 @@
     XXXX；XXXX；XXXX
 \end{cqukeywords}
 
-\addcontentsline{toc}{section}{ABSTRACT}  
+
   % 英文摘要
 \begin{cquabstracten}
   The abstract is a concise statement of the content of the thesis (design) without annotations or comments. It should be compact and refined.

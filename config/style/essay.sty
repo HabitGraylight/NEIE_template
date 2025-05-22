@@ -12,6 +12,13 @@
 % 页面设置
 \fancypagestyle{essaystyle}{
   \fancyhf{} % 清空默认页眉页脚
+  \if@twoside
+    \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+    \fancyhead[CO]{\footnotesize \leftmark} % 奇数页页眉为节标题
+  \else
+    \fancyhead[R]{\footnotesize \leftmark}
+    \fancyhead[L]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+  \fi
   \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
   \fancyhead[CO]{\footnotesize \leftmark} % 奇数页页眉为节标题
   \fancyfoot[C]{\footnotesize \thepage} % 页脚显示页码
@@ -73,13 +80,8 @@
 \setlength{\parsep}{0pt}
 % 页码设置
 
-
-\pretocmd{\section}{\cleardoublepage}{}{}
-% 下面的弃用了...
-\newenvironment{essaysection}{
-    \begingroup % 开始局部环境
-    \pagestyle{essaystyle} % 启用 essaystyle 样式
-}{
-    \par % 结束段落
-    \endgroup % 恢复之前的样式
-}
+\if@twoside
+  \pretocmd{\section}{\cleardoublepage}{}{}
+\else
+  \pretocmd{\section}{\clearpage}{}{}
+\fi

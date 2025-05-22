@@ -1,6 +1,10 @@
 \ProvidesPackage{statement}
 \newcommand{\cqustatement}{
-  \cleardoublepage
+  \if@twoside
+      \cleardoublepage % 确保参考文献部分从新页开始
+  \else
+      \clearpage % 确保参考文献部分从新页开始
+  \fi
   \thispagestyle{empty}
 
   \addcontentsline{toc}{section}{原创性声明和使用授权书}

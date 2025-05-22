@@ -65,9 +65,13 @@
     %\colorbox{yellow}{\hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}}
     \hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}
   \end{titlepage}
-  \newpage
-  \thispagestyle{empty}
-  \mbox{}
+  \if@twoside
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+  \else
+  \fi
+  
 }
 \newcommand{\makecoveren}[8]{
   \begin{titlepage}
@@ -118,11 +122,12 @@
       {\bfseries\zihao{3} June, #8}
     }
   \end{titlepage}
-  \newpage
-  \thispagestyle{empty}
-  \mbox{}
+  \if@twoside
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+  \else
+  \fi
 }
-
-
 
 \endinput

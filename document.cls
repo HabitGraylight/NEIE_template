@@ -2,9 +2,20 @@
 \ProvidesClass{document}[2025 重庆大学本科论文模板]
 
 % 基础配置
+\newif\if@oneside
+\DeclareOption{oneside}{\@onesidetrue}
+\DeclareOption{twoside}{\@onesidefalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
 \ProcessOptions\relax
-\LoadClass[twoside,a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
+\if@oneside
+  \LoadClass[oneside,a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
+\else
+  \LoadClass[twoside,a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
+\fi
+
+% \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
+% \ProcessOptions\relax
+% \LoadClass[twoside,a4paper,UTF8,zihao=-4,fontset=none]{ctexart}
 
 % 页面设置
 \RequirePackage[paper=a4paper,
@@ -12,7 +23,10 @@
   bottom=2.5cm,
   left=2.5cm,
   right=2.5cm,
-  headheight=1.5cm]{geometry}
+  headheight=4mm,  
+  headsep=10mm,       
+  footskip=10mm       
+  ]{geometry}
 
 % 字体系统
 \RequirePackage{fontspec}

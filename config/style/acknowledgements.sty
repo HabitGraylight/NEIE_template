@@ -3,9 +3,6 @@
 \RequirePackage{titlesec} % 标题格式设置
 \RequirePackage{setspace} % 行距设置
 
-% \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
-%这个命令会影响到所有的section标题格式,而且设置了很多次,最开始没有注意,懒得改了,直接注释掉了,出现bug可以看看是不是这里问题
-
 \fancypagestyle{acknowledgementsstyle}{
     \fancyhf{}
     \if@twoside
@@ -20,14 +17,17 @@
 }
 
 \newenvironment{cquacknowledgements}{
-    \cleardoublepage % 致谢从新的一页开始
+    \if@twoside
+      \cleardoublepage % 致谢从新的一页开始
+    \else
+      \clearpage
+    \fi
     \pagestyle{acknowledgementsstyle} % 使用致谢页眉页脚样式
-    % \thispagestyle{acknowledgementsstyle} % 双保险设置
     \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}
     \section*{\centering\bfseries\zihao{-3} 致 \quad 谢} % 致谢标题，黑体三号，居中
     \addcontentsline{toc}{section}{致谢} % 添加到目录
     \vspace{1em} % 标题下空一行
-    \setstretch{1.25} % 行距固定为 20 磅,1.25倍大约就是20磅(gpt写的)
+    \setstretch{1.25} % 行距固定为 20 磅,1.25倍大约就是20磅
     \zihao{4} % 小四
 }{
     \par % 结束致谢环境

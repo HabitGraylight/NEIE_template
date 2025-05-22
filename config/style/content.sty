@@ -31,8 +31,13 @@
 % 设置目录页页眉样式
 \fancypagestyle{contentstyle}{
     \fancyhf{}
-    \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
-    \fancyhead[CO]{\footnotesize 目录} % 奇数页页眉为节标题
+    \if@twoside
+      \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+      \fancyhead[CO]{\footnotesize 目录} % 奇数页页眉为节标题
+    \else
+      \fancyhead[R]{\footnotesize 目录}
+      \fancyhead[L]{\footnotesize 重庆大学本科学生毕业论文（设计）}
+    \fi
     \fancyfoot[C]{\footnotesize \thepage}
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0pt}

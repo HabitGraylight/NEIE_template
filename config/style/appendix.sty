@@ -9,7 +9,6 @@
 \fancypagestyle{appendixstyle}{
     \fancyhf{}
     \if@twoside
-      
       \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
       \fancyhead[CO]{\footnotesize 附录 \leftmark} % 奇数页
     \else
@@ -21,7 +20,11 @@
 }
 
 \newenvironment{cquappendix}[1]{
-    \cleardoublepage % 附录从新的一页开始
+    \if@twoside
+      \cleardoublepage % 致谢从新的一页开始
+    \else
+      \clearpage
+    \fi
     \markboth{#1}{#1} % 手动设置 \leftmark 为附录标题
     \pagestyle{appendixstyle} % 使用附录页眉页脚样式
     \markboth{#1}{#1}
