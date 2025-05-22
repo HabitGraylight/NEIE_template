@@ -16,7 +16,8 @@
 % 定义参考文献部分的页眉样式
 \fancypagestyle{bibstyle}{
   \fancyhf{} % 清空页眉页脚
-  \fancyhead[C]{\footnotesize 参考文献} % 设置参考文献页眉为“参考文献”
+  \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[CO]{\footnotesize 参考文献} % 奇数页
   \fancyfoot[C]{\footnotesize \thepage} % 页脚显示页码
   \renewcommand{\headrulewidth}{0.4pt} % 页眉下划线
   \renewcommand{\footrulewidth}{0pt} % 页脚无下划线
@@ -26,7 +27,7 @@
 % 正文中使用\bibcustom将参考文献添加生成
 \newcommand{\bibcustom}{
     \begingroup
-    \clearpage % 确保参考文献部分从新页开始
+    \cleardoublepage % 确保参考文献部分从新页开始
     \pagestyle{bibstyle} % 强制应用参考文献页眉样式
     \setlength{\parskip}{1em} % 设置参考文献后的空行
 

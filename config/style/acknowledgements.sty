@@ -9,8 +9,8 @@
 \fancypagestyle{acknowledgementsstyle}{
     \fancyhf{}
     \if@twoside
-      \fancyhead[LE,LO]{\footnotesize 重庆大学本科学生毕业论文（设计）}
-      \fancyhead[RE,RO]{\footnotesize 致谢}
+      \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+      \fancyhead[CO]{\footnotesize 致谢} % 奇数页
     \else
       \fancyhead[R]{\footnotesize 致谢}
       \fancyhead[L]{\footnotesize 重庆大学本科学生毕业论文（设计）}
@@ -20,7 +20,7 @@
 }
 
 \newenvironment{cquacknowledgements}{
-    \clearpage % 致谢从新的一页开始
+    \cleardoublepage % 致谢从新的一页开始
     \pagestyle{acknowledgementsstyle} % 使用致谢页眉页脚样式
     % \thispagestyle{acknowledgementsstyle} % 双保险设置
     \titleformat{\section}[block]{\bfseries\zihao{-3}\filcenter}{}{0pt}{}

@@ -42,6 +42,6 @@
 \RequirePackage{config/style/reference}
 \RequirePackage{config/style/appendix}
 \RequirePackage{config/style/acknowledgements}
-
+\RequirePackage{config/style/statement}
 
 \RequirePackage[nottoc]{tocbibind}%手动添加标题到目录所用的包

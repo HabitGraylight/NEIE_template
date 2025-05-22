@@ -24,10 +24,8 @@
 % ===== 中文摘要页眉页脚样式 =====
 \fancypagestyle{abstractstylecn}{
   \fancyhf{}
-  \fancyhead[LO]{\abstractheadleft} 
-  \fancyhead[RE]{\abstractheadrightcn} 
-  \fancyhead[RO]{\abstractheadrightcn} 
-  \fancyhead[LE]{\abstractheadleft} 
+  \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[CO]{\footnotesize 摘要} % 奇数页页眉为节标题
   \fancyfoot[C]{\footnotesize \thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -41,10 +39,12 @@
 % ===== 英文摘要页眉页脚样式 =====
 \fancypagestyle{abstractstyleen}{
   \fancyhf{}
-  \fancyhead[LO]{\abstractheadleft} 
-  \fancyhead[RE]{\abstractheadrighten} 
-  \fancyhead[RO]{\abstractheadrighten} 
-  \fancyhead[LE]{\abstractheadleft} 
+  % \fancyhead[LO]{\abstractheadleft} 
+  % \fancyhead[RE]{\abstractheadrighten} 
+  % \fancyhead[RO]{\abstractheadrighten} 
+  % \fancyhead[LE]{\abstractheadleft} 
+  \fancyhead[CE]{\footnotesize 重庆大学本科学生毕业论文（设计）} % 偶数页页眉左侧
+  \fancyhead[CO]{\footnotesize\setmainfont{Times New Roman} ABSTRACT} % 奇数页
   \fancyfoot[C]{\footnotesize \thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -82,7 +82,11 @@
 }{
   \par
   \vspace*{\fill}
+  \newpage
+  \thispagestyle{abstractstylecn}
+  \mbox{}
 }
+
 
 % ===== 英文摘要环境 =====
 \newenvironment{cquabstracten}[1]{
@@ -110,4 +114,7 @@
 }{
   \par
   \vspace*{\fill}
+  \newpage
+  \thispagestyle{abstractstylecn}
+  \mbox{}
 }

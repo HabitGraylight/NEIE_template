@@ -32,15 +32,15 @@
     {\bfseries\zihao{-2} 重庆大学本科学生毕业论文（设计）}
 
     % 论文题目
-    \vspace{3cm}
+    \vspace{1cm}
     {\bfseries\zihao{2} #1}
 
     % 校徽部分（不知道多少距离。。）
-    \vspace*{3cm}
+    \vspace*{1cm}
     \includegraphics[width=4cm]{assets/images/CQU-logo.png} \\ % 确保路径正确
     
     % 信息表格（三号字1倍行距）
-    \vspace{3cm}
+    \vspace{2cm}
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{@{}ll@{}}
       \bfseries\zihao{3}学\quad \quad 生： & \bfseries\zihao{3}#2 \\
@@ -65,6 +65,9 @@
     %\colorbox{yellow}{\hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}}
     \hspace*{2em}\zihao{3}\bfseries #8年6月\hspace*{2em}
   \end{titlepage}
+  \newpage
+  \thispagestyle{empty}
+  \mbox{}
 }
 \newcommand{\makecoveren}[8]{
   \begin{titlepage}
@@ -74,15 +77,15 @@
     {\bfseries\zihao{3} Undergraduate Thesis (Design) of Chongqing University}
     
     % 论文题目（18pt加粗）
-    \vspace{2.5cm}
+    \vspace{1cm}
     {\bfseries\zihao{2} #1} \\
     % 校徽部分（垂直定位）
-    \vspace*{2cm}
-    \includegraphics[width=4cm]{assets/images/CQU-logo.png} \\[1cm]
+    \vspace*{1cm}
+    \includegraphics[width=4cm]{assets/images/CQU-logo.png} \\[0.5cm]
     {\setstretch{2.0}
       % 作者信息（By + 换行）
       {\zihao{3} \textbf{By}} \\
-      {\bfseries\zihao{3} #2} \\[0.5cm]
+      {\bfseries\zihao{3} #2} \\[0.1cm]
       
       % 导师信息（Supervised by + 换行）
       {\zihao{3} \textbf{Supervised by}} \\
@@ -90,7 +93,7 @@
       \ifx#4\empty
       \else
        \\ and \\ #4
-       \fi} \\[1.5cm]
+       \fi} \\[0.8cm]
       
       
       % 专业信息（双专业换行）
@@ -106,15 +109,18 @@
       
       % 学院信息（小二号底部定位）
       \vfill
-      {\bfseries\zihao{3} National Elite Institute of Engineering,Chongqing University} \\
+      {\bfseries\zihao{-2} National Elite Institute of Engineering,Chongqing University} \\
       \ifx#7\empty
       \else
       {\bfseries\zihao{-2} #7} \\[0.5cm]
       \fi
       % 日期（右对齐）
-      {\bfseries\zihao{4} June, #8}
+      {\bfseries\zihao{3} June, #8}
     }
   \end{titlepage}
+  \newpage
+  \thispagestyle{empty}
+  \mbox{}
 }
 
 
