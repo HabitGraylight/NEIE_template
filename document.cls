@@ -23,6 +23,7 @@
   bottom=2.5cm,
   left=2.5cm,
   right=2.5cm,
+  bindingoffset=10mm, % 装订线，之前忘记加了
   headheight=4mm,  
   headsep=10mm,       
   footskip=10mm       
